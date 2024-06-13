@@ -134,7 +134,6 @@
                                             <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
                                                 data-bs-target="#deleteModal{{ $user->id }}">
                                                 <i class="bi-trash dropdown-item-icon"></i>
-
                                                 Delete
                                             </a>
                                         </div>

@@ -152,8 +152,7 @@
                                         </div>
                                     </td>
 
-                                    <!-- Delete Confirmation Modal -->
-                                    <div class="modal fade" id="deleteModal{{ $blog->id }}" tabindex="-1"
+                                     <div class="modal fade" id="deleteModal{{ $blog->id }}" tabindex="-1"
                                         aria-labelledby="deleteModalLabel{{ $blog->id }}" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

@@ -27,11 +27,11 @@
 
 
                      {{-- form start here  --}}
-                     <form id="userForm" action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data"  >
+                     <form id="userForm" action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                          @csrf
                          <div class="card-body">
                              <div class="mb-4">
-                                 <label for="inputGroupLightFullName" class="form-label">Full name 
+                                 <label for="inputGroupLightFullName" class="form-label">Full name
                                      <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
                                          data-bs-placement="top" title="The Namr Is Required"></i>
                                  </label>
@@ -92,7 +92,7 @@
                                          <i class="bi-phone"></i>
                                      </div>
                                      <input name="phone" type="tel" class="form-control" id="inputGroupLightPhone"
-                                         placeholder="+5200000"  aria-label="mark@example.com"
+                                         placeholder="+5200000" aria-label="mark@example.com"
                                          aria-describedby="inputGroupLightPhoneAddOn">
                                  </div>
                              </div>
@@ -137,8 +137,9 @@
 
                              <div class="card mb-3 mb-lg-5 mt-2">
                                  <div class="card-header card-header-content-between">
-                                     <h4 class="card-header-title">Image                                      <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
-                                         data-bs-placement="top" title="The Image Is Required"></i></h4>
+                                     <h4 class="card-header-title">Image <i class="bi-question-circle text-body ms-1"
+                                             data-bs-toggle="tooltip" data-bs-placement="top"
+                                             title="The Image Is Required"></i></h4>
                                  </div>
                                  <div class="dz-dropzone-card ">
                                      <div style="width: 100%; text-align: center;">
@@ -161,7 +162,7 @@
 
                              <div class="card-footer d-flex justify-content-end align-items-center gap-3">
                                  <a href="{{ route('user.index') }}" class="btn btn-white">Cancel</a>
-    <button type="button" onclick="submitForm()">Submit</button>
+                                 <button type="button" class="btn btn-primary">Submit</button>
                              </div>
                      </form>
 
@@ -174,15 +175,7 @@
          </div>
      </div>
 
-<script>
-    function submitForm() {
-         var submitButton = document.querySelector('#userForm button[type="button"]');
-        submitButton.disabled = true;
 
-      
-        document.getElementById('userForm').submit();
-    }
-</script>
 
 
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
