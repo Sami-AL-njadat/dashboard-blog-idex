@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
- use App\Models\blog;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class apiController extends Controller
 {
-
     public function blogs(Request $request)
     {
         $local = $request->input('local');
+        $perPage = $request->input('per_page', 10); 
 
-         if ($local) {
-             $blogs = Blog::where('lang', $local)->get();
+        if ($local) {
+            $blogs = Blog::where('lang', $local)->paginate($perPage);
         } else {
-            $blogs = Blog::all();
+            $blogs = Blog::paginate($perPage);
         }
 
-         if ($blogs->isEmpty()) {
+        if ($blogs->isEmpty()) {
             $data = [
                 'status' => 404,
                 'message' => 'No blogs found',
@@ -27,11 +27,20 @@ class apiController extends Controller
         } else {
             $data = [
                 'status' => 200,
-                'blogs' => $blogs,
+                'blogs' => $blogs->items(), 
+                'pagination' => [
+                    'total' => $blogs->total(),
+                    'count' => $blogs->count(),
+                    'per_page' => $blogs->perPage(),
+                    'current_page' => $blogs->currentPage(),
+                    'total_pages' => $blogs->lastPage(),
+                ],
             ];
             return response()->json($data, 200);
         }
     }
+
+
 
     public function blogSpecific($id)
     {
