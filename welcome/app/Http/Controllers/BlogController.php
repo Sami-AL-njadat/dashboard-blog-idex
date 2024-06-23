@@ -34,7 +34,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        // Validation
+        
         $validator = Validator::make($request->all(), [
             'lang' => 'required|in:ar,en',
             'header' => 'required|string|max:255',

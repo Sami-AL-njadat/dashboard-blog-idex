@@ -162,7 +162,7 @@
 
                              <div class="card-footer d-flex justify-content-end align-items-center gap-3">
                                  <a href="{{ route('user.index') }}" class="btn btn-white">Cancel</a>
-                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                 <button  id="submit-button" type="submit" class="btn btn-primary">Submit</button>
                              </div>
                      </form>
 
@@ -175,7 +175,11 @@
          </div>
      </div>
 
-
+<script>
+    function disableSubmitButton(form) {
+        form.querySelector('#submit-button').disabled = true;
+    }
+</script>
 
 
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
