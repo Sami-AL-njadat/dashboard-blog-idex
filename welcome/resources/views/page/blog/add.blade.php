@@ -59,9 +59,7 @@
                                      <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
                                          data-bs-placement="top" title="The Blog Brief Is Required (its as short description for Article) "></i>
                                  </label>
-                                 <textarea class="form-control" name="brief" placeholder="Enter header two here">
-
-                                 </textarea>
+                                 <textarea class="form-control" name="brief" placeholder="Enter header two here"></textarea>
                              </div>
                              <div class="mb-4">
                                  <label class="form-label">
