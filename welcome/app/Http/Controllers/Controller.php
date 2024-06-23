@@ -47,9 +47,9 @@ class Controller extends BaseController
             return redirect()->back()->with('error', $errorMessage);
         }
 
-        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-        $domain = $_SERVER['HTTP_HOST'];
-        $url = "$protocol://$domain";
+        // $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        // $domain = $_SERVER['HTTP_HOST'];
+        // $url = "$protocol://$domain";
         
         $user = Auth::user();
 
@@ -59,7 +59,9 @@ class Controller extends BaseController
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('userImage'), $imageName);
-             $user->image = $url   . '/' . 'userImage/' . $imageName;
+            //  $user->image = $url   . '/' . 'userImage/' . $imageName;
+            $user->image = url('userImage/' . $imageName);
+
 
             $changes = true;  
         }
