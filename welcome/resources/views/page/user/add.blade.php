@@ -27,7 +27,7 @@
 
 
                      {{-- form start here  --}}
-                     <form id="userForm" action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+                     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                          @csrf
                          <div class="card-body">
                              <div class="mb-4">
@@ -162,7 +162,7 @@
 
                              <div class="card-footer d-flex justify-content-end align-items-center gap-3">
                                  <a href="{{ route('user.index') }}" class="btn btn-white">Cancel</a>
-                                 <button type="button" class="btn btn-primary">Submit</button>
+                                 <button type="submit" class="btn btn-primary">Submit</button>
                              </div>
                      </form>
 

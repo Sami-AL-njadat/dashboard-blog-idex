@@ -64,7 +64,7 @@ class UserController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('userImage'), $imageName);
-            $user->image = $url   . '/' . 'imageBlog/' . $imageName;
+            $user->image = $url   . '/' . 'userImage/' . $imageName;
         }
       
         $user->save();
