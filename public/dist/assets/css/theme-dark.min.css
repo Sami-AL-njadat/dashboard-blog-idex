@@ -34516,11 +34516,11 @@ textarea:-webkit-autofill:hover {
 .hs-nav-scroller-horizontal .hs-nav-scroller-arrow-next {
     background-image: linear-gradient(to right, transparent 0, #17181a 50%)
 }
-
-.scrollable-cell {
-    max-height: 40px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-}
+ .scrollable-cell {
+     height: 40px;
+     width: 150px;
+     overflow-y: auto;
+     overflow-x: auto !important;
+     -webkit-overflow-scrolling: touch;
+     scroll-behavior: smooth;
+ }

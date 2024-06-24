@@ -34292,9 +34292,10 @@ a:hover .text-inherit {
     margin-bottom: 2.5rem
 }
  .scrollable-cell {
-      max-height: 40px;
-      overflow-y: auto;
-      overflow-x: hidden;
+      height: 40px;
+      width: 150px;
+      overflow-y: auto  ;
+      overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
   }
