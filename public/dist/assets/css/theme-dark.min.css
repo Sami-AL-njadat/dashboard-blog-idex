@@ -34519,7 +34519,7 @@ textarea:-webkit-autofill:hover {
 
 .scrollable-cell {
     height: 40px;
-    width: 190px;
+    width: 177px;
     overflow-y: auto;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
