@@ -7,6 +7,8 @@ use App\Models\User; // Don't forget to import the User model
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Flasher\Laravel\Facade\Flasher;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -98,17 +100,22 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-         $currentUser = auth()->user();
+        $currentUser = Auth::user();  
 
-         $user = User::findOrFail($id);
-
-         if ($user->id == $currentUser->id) {
-            return redirect()->route('user.index')->with('warning', 'You cannot delete your own account. Only other admins can delete you.');
+         if ($currentUser->id != 1) {
+            return redirect()->route('user.index')->with('warning', 'Only the admin  can delete users.');
         }
 
-         $user->delete();
+         if ($id == $currentUser->id) {
+            return redirect()->route('user.index')->with('warning', 'You cannot delete your own account.');
+        }
+
+        $user = User::findOrFail($id); 
+
+        $user->delete();
 
         return redirect()->route('user.index')->with('success', 'User deleted successfully.');
     }
+
 
 }
