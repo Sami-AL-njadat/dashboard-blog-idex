@@ -33,8 +33,7 @@ class Controller extends BaseController
     public function updateInformation(Request $request)
     {
 
-        // dd($request);
-
+ 
         $validator = Validator::make($request->all(), [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25048',
             'name' => 'nullable|string|max:255',
