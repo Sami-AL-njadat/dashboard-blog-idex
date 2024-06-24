@@ -33,11 +33,14 @@ class Controller extends BaseController
     public function updateInformation(Request $request)
     {
 
+        // dd($request);
 
         $validator = Validator::make($request->all(), [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25048',
             'name' => 'nullable|string|max:255',
             'newEmail' => 'nullable|email|max:255',
+            'newPhone' => 'nullable|string|regex:/^\+?[0-9\s\-]*$/|max:16|min:4',
+
 
         ]);
 
@@ -72,6 +75,11 @@ class Controller extends BaseController
          if ($request->filled('newEmail') && $request->input('newEmail') !== $user->email) {
             $user->email = $request->input('newEmail');
             $changes = true;  
+        }
+
+        if ($request->filled('newPhone') && $request->input('newPhone') !== $user->phone) {
+            $user->phone = $request->input('newPhone');
+            $changes = true;
         }
 
          if ($changes) {

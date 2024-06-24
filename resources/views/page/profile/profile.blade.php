@@ -112,6 +112,17 @@
                                         </div>
                                     </div>
 
+
+                                        <div class="row mb-4">
+                                        <label for="newEmailLabel" class="col-sm-3 col-form-label form-label">
+                                            New Phone Number
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="tel" class="form-control" name="newPhone" id="newEmailLabel"
+                                                placeholder="{{ Auth::user()->phone }}">
+                                        </div>
+                                    </div>
+
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
