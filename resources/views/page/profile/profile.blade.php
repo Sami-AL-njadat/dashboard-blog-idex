@@ -88,11 +88,11 @@
                                 <!-- End Avatar -->
 
                                 <!-- Body -->
-                                          <div class="card-header">
-                            <h4 class="card-title">Change your Information</h4>
-                        </div>
+                                <div class="card-header">
+                                    <h4 class="card-title">Change your Information</h4>
+                                </div>
                                 <div class="card-body">
-                         
+
                                     <div class="row mb-4">
                                         <label for="newEmailLabel" class="col-sm-3 col-form-label form-label">
                                             New User Name
@@ -113,13 +113,14 @@
                                     </div>
 
 
-                                        <div class="row mb-4">
+                                    <div class="row mb-4">
                                         <label for="newEmailLabel" class="col-sm-3 col-form-label form-label">
                                             New Phone Number
                                         </label>
                                         <div class="col-sm-9">
-                                            <input type="tel" class="form-control" name="newPhone" id="newEmailLabel"
-                                                placeholder="{{ Auth::user()->phone }}">
+                                            <input type="tel" class="form-control" name="newPhone" id="newPhone"
+                                                placeholder="{{ Auth::user()->phone ?? 'No Phone Number' }}">
+
                                         </div>
                                     </div>
 

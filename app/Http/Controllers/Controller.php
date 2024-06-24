@@ -15,7 +15,8 @@ use Flasher\Laravel\Facade\Flasher;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function index(){
+    public function index()
+    {
         return view('layout.home');
     }
 
@@ -23,17 +24,17 @@ class Controller extends BaseController
     public function profile()
 
 
-    
+
     {
 
         $user = auth()->user();
-        return view('page.profile.profile',compact('user'));
+        return view('page.profile.profile', compact('user'));
     }
 
     public function updateInformation(Request $request)
     {
 
- 
+
         $validator = Validator::make($request->all(), [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25048',
             'name' => 'nullable|string|max:255',
@@ -52,28 +53,28 @@ class Controller extends BaseController
         $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
         $domain = $_SERVER['HTTP_HOST'];
         $url = "$protocol://$domain";
-        
+
         $user = Auth::user();
 
-         $changes = false;  
+        $changes = false;
 
-         if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('userImage'), $imageName);
-             $user->image = $url   . '/' . 'userImage/' . $imageName;
+            $user->image = $url   . '/' . 'userImage/' . $imageName;
 
-            $changes = true;  
+            $changes = true;
         }
 
-         if ($request->filled('name') && $request->input('name') !== $user->name) {
+        if ($request->filled('name') && $request->input('name') !== $user->name) {
             $user->name = $request->input('name');
-            $changes = true;  
+            $changes = true;
         }
 
-         if ($request->filled('newEmail') && $request->input('newEmail') !== $user->email) {
+        if ($request->filled('newEmail') && $request->input('newEmail') !== $user->email) {
             $user->email = $request->input('newEmail');
-            $changes = true;  
+            $changes = true;
         }
 
         if ($request->filled('newPhone') && $request->input('newPhone') !== $user->phone) {
@@ -81,15 +82,11 @@ class Controller extends BaseController
             $changes = true;
         }
 
-         if ($changes) {
+        if ($changes) {
             $user->save();
             return redirect()->back()->with('success', 'Profile updated successfully.');
         } else {
             return redirect()->back()->with('info', 'No changes made to the profile.');
         }
     }
-
-
-    
-    
 }
