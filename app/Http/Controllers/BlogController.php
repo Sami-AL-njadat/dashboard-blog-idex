@@ -114,8 +114,6 @@ class BlogController extends Controller
             return redirect()->back()->with('error', $errorMessage);
         }
 
-
-
         $blog = Blog::find($id);
         if (!$blog) {
             return redirect()->back()->with('error', 'Blog not found');
@@ -143,16 +141,10 @@ class BlogController extends Controller
             }
         }
 
-
-        if ($request->filled('brief')) {
+        if ($request->filled('brief') && $blog->brief !== $request->brief) {
             $blog->brief = $request->brief;
             $changes = true;
-        } else {
-            $blog->brief = null;
-            $changes = true;
         }
-
-
 
         $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
         $domain = $_SERVER['HTTP_HOST'];
@@ -162,10 +154,9 @@ class BlogController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('/imageBlog'), $imageName);
-            $blog->image = $url   . '/' . 'imageBlog/' . $imageName;
+            $blog->image = $url . '/' . 'imageBlog/' . $imageName;
             $changes = true;
         }
-
 
         if ($changes) {
             $blog->save();
@@ -174,6 +165,7 @@ class BlogController extends Controller
             return redirect()->back()->with('info', 'No changes were made');
         }
     }
+
 
     /**
      * Remove the specified resource from storage.
