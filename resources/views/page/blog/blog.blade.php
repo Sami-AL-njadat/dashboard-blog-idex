@@ -22,7 +22,7 @@
             <div class="js-nav-scroller hs-nav-scroller-horizontal">
                 <ul class="nav nav-tabs page-header-tabs" id="pageHeaderTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('blog.index') }}">Blog sami  from jordan </a>
+                        <a class="nav-link active" href="{{ route('blog.index') }}">Blog</a>
                     </li>
                 </ul>
             </div>
