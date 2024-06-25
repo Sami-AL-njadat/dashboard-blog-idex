@@ -34300,3 +34300,15 @@ a:hover .text-inherit {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 }
+
+@media (max-width:991.98px) {
+    .navbar-expand-lg .dropdown-menu {
+        background-color: #ffffff
+    }
+}
+
+@media (max-width:1199.98px) {
+    .navbar-expand-xl .dropdown-menu {
+        background-color: #ffffff
+    }
+}
