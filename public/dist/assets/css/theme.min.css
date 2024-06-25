@@ -34292,15 +34292,6 @@ a:hover .text-inherit {
     margin-bottom: 2.5rem
 }
 
-.scrollable-cell {
-    height: 40px;
-    width: 177px;
-    overflow-y: auto;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-}
-
 @media (max-width:991.98px) {
     .navbar-expand-lg .dropdown-menu {
         background-color: #ffffff
@@ -34312,3 +34303,13 @@ a:hover .text-inherit {
         background-color: #ffffff
     }
 }
+
+.scrollable-cell {
+    height: 40px;
+    width: 177px;
+    overflow-y: auto;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
