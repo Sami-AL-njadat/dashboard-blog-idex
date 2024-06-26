@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/idex/contact', [apiController::class, 'send']);
 
 Route::get('/idex/blogs', [apiController::class, 'blogs']);
 Route::get('/idex/blog-id/{id?}', [apiController::class, 'blogSpecific']);
+// Route::post('/contact', [apiController::class, 'send']);
+ 

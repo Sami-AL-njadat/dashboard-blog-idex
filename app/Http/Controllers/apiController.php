@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\blog;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+use App\Mail\ContactMail;
+  
 class apiController extends Controller
 {
     public function blogs(Request $request)
@@ -59,5 +62,38 @@ class apiController extends Controller
         }
     }
 
-    
+
+    public function send(Request $request)
+    {
+        // Validate the incoming request
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'subject' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required|string',
+            'phone' => 'required|string|regex:/^\+?[0-9\s\-]*$/|max:16|min:4',
+        ]);
+
+        if ($validator->fails()) {
+            $errorMessage = implode('<br>', $validator->errors()->all());
+            return response()->json([
+                'message' => 'Validation failed',
+                'errors' => $errorMessage,
+            ], 422);
+        }
+
+        // If validation passes, proceed with sending the email
+        $validatedData = $validator->validated();
+
+        $recipients = [
+             'sami.alnajadat@gmail.com',
+            'sami.alnajadat@releans.com',
+            'amro.alkhazaleh@releans.com',
+        ];
+
+        // Send the email using Mailable class
+        Mail::to($recipients)->send(new ContactMail($validatedData));
+
+        return response()->json(['message' => 'Email sent successfully!'], 200);
+    }
 }
