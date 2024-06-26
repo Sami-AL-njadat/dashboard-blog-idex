@@ -148,7 +148,7 @@
             <!-- Form -->
 
              {{-- class="js-validate needs-validation" novalidate --}}
-             <form method="POST" action="{{ route('login') }}" >
+             <form method="POST" action="{{ route('login') }}" id="loginForm" >
         @csrf
                <div class="text-center">
                 <div class="mb-5">
@@ -211,7 +211,7 @@
               <!-- End Form Check -->
 
               <div class="d-grid mt-4 border">
-                <button type="submit" class="btn btn-dark btn-lg">Sign in</button>
+                <button type="submit" id="submiTbtn" class="btn btn-dark btn-lg">Sign in</button>
                </div>
              </form>
             <!-- End Form -->
@@ -226,6 +226,11 @@
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
+ <script>
+    document.getElementById('loginForm').addEventListener('submit', function() {
+        document.getElementById('submiTbtn').disabled = true;
+    });
+</script>
   <!-- JS Global Compulsory  -->
   <script src="{{asset('dist/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
   <script src="{{asset('dist/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js')}}"></script>

@@ -45,9 +45,9 @@
                                   data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"
                                   data-bs-dropdown-animation>
                                   <div class="avatar avatar-sm avatar-circle">
-                                       <img class="avatar-img"
-                                                  src="{{ asset(Auth::user()->image ? Auth::user()->image : asset('images/no-image1.jpg')) }}"
-                                                  alt="Image Description">
+                                      <img class="avatar-img"
+                                          src="{{ asset(Auth::user()->image ? Auth::user()->image : asset('images/no-image1.jpg')) }}"
+                                          alt="Image Description">
                                       <span class="avatar-status avatar-sm-status avatar-status-success"></span>
                                   </div>
                               </a>
@@ -73,7 +73,7 @@
                                   <div class="dropdown-divider"></div>
 
 
-                                  <a class="dropdown-item" href="{{route('profile.page')}}">Profile &amp; account</a>
+                                  <a class="dropdown-item" href="{{ route('profile.page') }}">Profile &amp; account</a>
 
 
 
@@ -84,17 +84,19 @@
 
                                   <div class="dropdown-divider"></div>
 
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                  <form id="logoutForm" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                       @csrf
                                   </form>
+
+                                  <!-- Sign Out Link -->
                                   <a class="dropdown-item" href="{{ route('logout') }}"
-                                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                      onclick="preventMultipleLogout(event);">
                                       Sign out
                                   </a>
 
                               </div>
-                      @endif
+                          @endif
 
                       </div>
 
@@ -105,3 +107,14 @@
           </div>
       </div>
   </header>
+
+  
+<script>
+    function preventMultipleLogout(event) {
+        event.preventDefault();  
+         const logoutLink = event.target;
+        logoutLink.style.pointerEvents = 'none';  
+        logoutLink.innerText = 'Signing out...';  
+        document.getElementById('logoutForm').submit();
+    }
+</script>

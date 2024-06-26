@@ -112,12 +112,12 @@
                          </div>
                          <div class="card-footer d-flex justify-content-end align-items-center gap-3">
                              <a href="{{ route('blog.index') }}" class="btn btn-white">Cancel</a>
-                             <button  type="submit" class="btn btn-primary">Submit</button>
-                         </div>
+                                  <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+
+                            </div>
                      </form>
 
-                     {{-- form end here  --}}
-
+ 
 
 
                  </div>
@@ -126,16 +126,11 @@
      </div>
 
  
-
-     <script>
-         document.addEventListener("DOMContentLoaded", function() {
-             new TomSelect("#blog_lang", {
-                 persist: false,
-                 createOnBlur: true,
-                 create: true
-             });
-         });
-     </script>
+ <script>
+    document.getElementById('blogForm').addEventListener('submit', function() {
+        document.getElementById('submitBtn').disabled = true;
+    });
+</script>
 
 
      <script>

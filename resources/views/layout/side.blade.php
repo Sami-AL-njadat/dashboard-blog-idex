@@ -57,22 +57,23 @@
                             </a>
                         </div>
 
-                        @if(auth()->user()->role == 'admin')
-
-                          <div class="nav-item">
-                            <a class="nav-link " href="{{ route('user.index') }}" data-placement="left">
-                                <i class="bi-people nav-icon"></i>
-                                <span class="nav-link-title">User</span>
-                            </a>
-                        </div>
+                        @if (auth()->user()->role == 'admin')
+                            <div class="nav-item">
+                                <a class="nav-link " href="{{ route('user.index') }}" data-placement="left">
+                                    <i class="bi-people nav-icon"></i>
+                                    <span class="nav-link-title">User</span>
+                                </a>
+                            </div>
                         @endif
 
                         <div class="dropdown-divider"></div>
 
+
+
                         <div class="nav-item">
                             <!-- Log Out Link -->
                             <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                onclick="event.preventDefault(); disableLogout(); document.getElementById('logout-form').submit();"
                                 data-placement="left">
                                 <i class="bi-box-arrow-right nav-icon"></i>
                                 <span class="nav-link-title">Log Out</span>
@@ -138,3 +139,10 @@
     </div>
     </div>
 </aside>
+<script>
+    function disableLogout() {
+        const logoutLink = document.querySelector('a.nav-link[href="{{ route('logout') }}"]');
+        logoutLink.style.pointerEvents = 'none';
+        logoutLink.style.opacity = '0.5';
+    }
+</script>

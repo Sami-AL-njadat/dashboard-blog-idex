@@ -27,7 +27,7 @@
 
 
                      {{-- form start here  --}}
-                     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+                     <form id="userForm" action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                          @csrf
                          <div class="card-body">
                              <div class="mb-4">
@@ -175,10 +175,10 @@
          </div>
      </div>
 
-<script>
-    function disableSubmitButton(form) {
-        form.querySelector('#submit-button').disabled = true;
-    }
+ <script>
+    document.getElementById('userForm').addEventListener('submit', function() {
+        document.getElementById('submit-button').disabled = true;
+    });
 </script>
 
 

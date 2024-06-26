@@ -65,8 +65,7 @@ class apiController extends Controller
 
     public function send(Request $request)
     {
-        // Validate the incoming request
-        $validator = Validator::make($request->all(), [
+         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'subject' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -82,16 +81,14 @@ class apiController extends Controller
             ], 422);
         }
 
-        // If validation passes, proceed with sending the email
         $validatedData = $validator->validated();
 
         $recipients = [
-             'sami.alnajadat@gmail.com',
+            'sami.alnajadat@gmail.com',
             'sami.alnajadat@releans.com',
             'amro.alkhazaleh@releans.com',
         ];
 
-        // Send the email using Mailable class
         Mail::to($recipients)->send(new ContactMail($validatedData));
 
         return response()->json(['message' => 'Email sent successfully!'], 200);
