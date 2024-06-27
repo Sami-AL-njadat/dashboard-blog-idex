@@ -9,6 +9,7 @@
     <!-- Title -->
     <title>Dashboard | IDEX</title>
     <meta name="description" content="IDEX dashboard for managing and tracking your activities effectively.">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Keywords -->
     <meta name="keywords" content="IDEX, dashboard, tracking, management">

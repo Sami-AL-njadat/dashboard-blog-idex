@@ -108,13 +108,13 @@
       </div>
   </header>
 
-  
-<script>
-    function preventMultipleLogout(event) {
-        event.preventDefault();  
-         const logoutLink = event.target;
-        logoutLink.style.pointerEvents = 'none';  
-        logoutLink.innerText = 'Signing out...';  
-        document.getElementById('logoutForm').submit();
-    }
-</script>
+
+  <script>
+      function preventMultipleLogout(event) {
+          event.preventDefault();
+          const logoutLink = event.target;
+          logoutLink.style.pointerEvents = 'none';
+          logoutLink.innerText = 'Signing out...';
+          document.getElementById('logoutForm').submit();
+      }
+  </script>
