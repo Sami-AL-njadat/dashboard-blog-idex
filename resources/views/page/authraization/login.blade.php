@@ -8,6 +8,7 @@
 
     <!-- Title -->
     <title>Basic Log In | Front - Admin &amp; Dashboard Template</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('images/logoidex.png') }}">
