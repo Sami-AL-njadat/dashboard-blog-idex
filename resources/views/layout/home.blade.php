@@ -10,6 +10,12 @@
                      <h1 class="page-header-title">Dashboard</h1>
                  </div>
 
+                 <div>
+                    <strong>
+                        SAMI
+                    </strong>
+                 </div>
+
              </div>
              <!-- End Row -->
          </div>
