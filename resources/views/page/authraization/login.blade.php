@@ -239,6 +239,8 @@
                         {{-- class="js-validate needs-validation" novalidate --}}
                         <form method="POST" action="{{ route('login') }}" id="loginForm">
                             @csrf
+                            @method('POST')
+
                             <div class="text-center">
                                 <div class="mb-5">
                                     <h1 class="display-5">Sign in</h1>
