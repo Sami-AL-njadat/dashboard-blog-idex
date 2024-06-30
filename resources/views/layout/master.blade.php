@@ -587,6 +587,15 @@
             HSCore.components.HSClipboard.init('.js-clipboard');
         });
     </script>
+    <script>
+        var script = document.createElement('script');
+script.src = "https://cdn.datatables.net/1.12.2/js/jquery.dataTables.js";
+script.type = "text/javascript";
+script.async = true;
+document.head.appendChild(script);
+
+    </script>
 </body>
+
 
 </html>
