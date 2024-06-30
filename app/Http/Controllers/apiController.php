@@ -73,13 +73,16 @@ class apiController extends Controller
             'phone' => 'required|string|regex:/^\+?[0-9\s\-]*$/|max:16|min:4',
         ]);
 
+     
+
         if ($validator->fails()) {
-            $errorMessage = implode('<br>', $validator->errors()->all());
+            $errorMessage = implode("\n", $validator->errors()->all());
             return response()->json([
                 'message' => 'Validation failed',
                 'errors' => $errorMessage,
             ], 422);
         }
+
 
         $validatedData = $validator->validated();
 
