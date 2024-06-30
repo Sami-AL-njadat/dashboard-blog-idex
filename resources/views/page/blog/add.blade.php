@@ -44,7 +44,7 @@
                                  </div>
                              </div>
                              <div class="mb-4">
-                                   <label for="blog_lang" class="form-label">
+                                   <label for="blog_artical" class="form-label">
                                     Article Header
                                      <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
                                          data-bs-placement="top" title="The Blog Header Is Required (its as title for Article) "></i>
@@ -53,7 +53,7 @@
                                      required>
                              </div>
                              <div class="mb-4">
-                                    <label for="blog_lang" class="form-label">
+                                    <label for="blog_artical" class="form-label">
                                    Article Brief
                                      <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
                                          data-bs-placement="top" title="The Blog Brief Is Required (its as short description for Article) "></i>
@@ -131,6 +131,16 @@
         document.getElementById('submitBtn').disabled = true;
     });
 </script>
+
+     <script>
+         document.addEventListener("DOMContentLoaded", function() {
+             new TomSelect("#blog_lang", {
+                 persist: false,
+                 createOnBlur: true,
+                 create: true
+             });
+         });
+     </script>
 
 
      <script>
