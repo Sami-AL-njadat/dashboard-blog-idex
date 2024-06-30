@@ -585,6 +585,15 @@
             HSCore.components.HSClipboard.init('.js-clipboard');
         });
     </script>
+
+    <script>
+setTimeout(function() {
+    var script = document.createElement('script');
+    script.src = "https://cdn.datatables.net/1.11.6/js/jquery.dataTables.js";
+    script.type = "text/javascript";
+    document.body.appendChild(script);
+}, 1000); // Adjust delay time as needed
+    </script>
 </body>
 
 </html>
