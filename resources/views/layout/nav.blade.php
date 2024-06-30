@@ -53,13 +53,16 @@
                               </a>
 
                               <div class="dropdown-menu dropdown-menu-end navbar-dropdown-menu navbar-dropdown-menu-borderless navbar-dropdown-account"
-                                  aria-labelledby="accountNavbarDropdown" style="width: 16rem;">
+                                  aria-labelledby="accountNavbarDropdown" style="width: 20rem;">
                                   <div class="dropdown-item-text">
                                       <div class="d-flex align-items-center">
+
+
                                           <div class="avatar avatar-sm avatar-circle">
-                                              {{-- <img class="avatar-img"
+
+                                              <img class="avatar-img"
                                                   src="{{ asset(Auth::user()->image ? Auth::user()->image : asset('images/no-image1.jpg')) }}"
-                                                  alt="Image Description"> --}}
+                                                  alt="Image Description">
                                           </div>
 
                                           <div class="flex-grow-1 ms-3">
