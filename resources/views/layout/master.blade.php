@@ -25,12 +25,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.2/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/jquery.dataTables.css">
 
     <!-- DataTables JS -->
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.2/js/jquery.dataTables.js"></script>
-    <!-- DataTables JS -->
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.2/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.js"></script>
 
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"> --}}
@@ -587,15 +585,6 @@
             HSCore.components.HSClipboard.init('.js-clipboard');
         });
     </script>
-    <script>
-        var script = document.createElement('script');
-script.src = "https://cdn.datatables.net/1.12.2/js/jquery.dataTables.js";
-script.type = "text/javascript";
-script.async = true;
-document.head.appendChild(script);
-
-    </script>
 </body>
-
 
 </html>
