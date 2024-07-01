@@ -100,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+         
         $currentUser = Auth::user();  
 
          if ($currentUser->id != 1) {
