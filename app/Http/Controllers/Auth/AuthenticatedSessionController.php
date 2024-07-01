@@ -21,7 +21,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('page.authraization.login');
+ 
+        return view('page.authraization.login' );
     }
 
     /**
@@ -29,8 +30,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(Request $request)
     {
-
-        
+         
         $validator = Validator::make($request->all(), [
             'email' => ['required', 'email'],
             'password' => ['required'],

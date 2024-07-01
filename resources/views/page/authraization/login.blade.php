@@ -203,6 +203,8 @@
             return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16)
         }
     </script>
+
+ 
 </head>
 
 <body>
@@ -292,9 +294,11 @@
 
                             <!-- Form Check -->
                             <div class="form-check mb-4">
-                                <input type="checkbox" name="remember" class="form-check-input" value=""
-                                    id="termsCheckbox">
-                                <label class="form-check-label" for="termsCheckbox">
+                                <input type="checkbox" name="remember" class="form-check-input" 
+                                    id="remember_me">
+
+                                       
+                                <label class="form-check-label" id="remember_me">
                                     Remember me
                                 </label>
                             </div>
@@ -312,10 +316,8 @@
 
             </div>
         </div>
-        <!-- End Content -->
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
-
+     </main>
+ 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function() {
             document.getElementById('submiTbtn').disabled = true;
@@ -352,6 +354,7 @@
             }
         })()
     </script>
+    
 </body>
 
 </html>

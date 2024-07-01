@@ -23,3 +23,4 @@ Route::resource('/blog', BlogController::class)->middleware('auth');
 Route::middleware(['role:admin'])->group(function () {
     Route::resource('/user', UserController::class);
 });
+ 

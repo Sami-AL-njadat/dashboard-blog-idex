@@ -47,7 +47,7 @@
                                   <div class="avatar avatar-sm avatar-circle">
                                       <img class="avatar-img"
                                           src="{{ asset(Auth::user()->image ? Auth::user()->image : asset('images/no-image1.jpg')) }}"
-                                          alt="Image Description">
+                                          alt="Image">
                                       <span class="avatar-status avatar-sm-status avatar-status-success"></span>
                                   </div>
                               </a>
@@ -62,7 +62,7 @@
 
                                               <img class="avatar-img"
                                                   src="{{ asset(Auth::user()->image ? Auth::user()->image : asset('images/no-image1.jpg')) }}"
-                                                  alt="Image Description">
+                                                  alt="Image">
                                           </div>
 
                                           <div class="flex-grow-1 ms-3">
@@ -92,11 +92,10 @@
                                       @csrf
                                   </form>
 
-                                  <!-- Sign Out Link -->
-                                  <a class="dropdown-item" href="{{ route('logout') }}"
-                                      onclick="preventMultipleLogout(event);">
+                                  <a class="dropdown-item" href="#" onclick="preventMultipleLogout(event);">
                                       Sign out
                                   </a>
+
 
                               </div>
                           @endif
@@ -118,6 +117,7 @@
           const logoutLink = event.target;
           logoutLink.style.pointerEvents = 'none';
           logoutLink.innerText = 'Signing out...';
+
           document.getElementById('logoutForm').submit();
       }
   </script>
